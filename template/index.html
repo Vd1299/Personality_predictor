@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Personality Prediction</title>
+    <link rel='stylesheet' href='https://codepen.io/uzcho_/pen/RmOWmw.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Personality Prediction</h1>
+        <br>
+
+    </header>
+    <div class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+
+            <div class="field" tabindex="2">
+                <label>
+				Your Gender: 1:Female 2: Male
+			</label>
+                <input name="Gender" type="number" placeholder="1: Female 2: Male" required>
+            </div>
+
+            <div class="field" tabindex="2">
+                <label>
+			Your Age
+			</label>
+                <input name="Age" type="number">
+            </div>
+
+            <div class="field" tabindex="2">
+                <label>
+				Openness: How open are you?(1-10)
+			</label>
+                <input name="openness" type="number" placeholder="Between 1 to 10" required>
+            </div>
+
+            <div class="field" tabindex="2">
+                <label>
+                Neuroticism: A fundamental personality trait(1-10)
+			</label>
+                <input name="neuroticism" type="number" placeholder="Between 1 to 10" required>
+            </div>
+
+            <div class="field" tabindex="2">
+                <label>
+                Conscientiousness: Personality trait of being careful or diligent(1-10)
+			</label>
+                <input name="conscientiousness" type="number" placeholder="Between 1 to 10" required>
+            </div>
+
+            <div class="field" tabindex="2">
+                <label>
+                Agreeableness: How agreeable are you?(1-10)
+			</label>
+                <input name="agreeableness" type="number" placeholder="Between 1 to 10" required>
+            </div>
+
+            <div class="field" tabindex="2">
+                <label>
+                Extraversion: How much extrovert person are you?(1-10)
+			</label>
+                <input name="extraversion" type="number" placeholder="Between 1 to 10" required>
+            </div>
+
+            <button type="submit">Predict</button>
+            <br>
+	    {{ prediction_text }}
+
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>
